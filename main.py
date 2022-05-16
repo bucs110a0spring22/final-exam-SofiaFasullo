@@ -1,12 +1,16 @@
 #practice
 import requests
+import random
 
 def main():
   r = requests.get('https://ghibliapi.herokuapp.com/films')
+  print(r.status_code) #check for 200 'ok'
   movies = r.json()
-  movies = movies[0]
-  for films in movies:
-    print(films, ':', movies.get(films))
+  movie_index = random.randrange(0,21)
+  print(movie_index)
+  movie = movies[movie_index]
+  for films in movie:
+    print(films, ':', movie.get(films))
 main()
 
 '''
