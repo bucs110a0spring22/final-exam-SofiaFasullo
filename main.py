@@ -1,7 +1,26 @@
 #practice
 import requests
-import random
+#import random
 
+
+def main():
+  r = requests.get('https://x-math.herokuapp.com/api/random')
+  print(r.status_code) #check for 200 'ok'
+  equations = r.json()
+  practice_prob = equations.get('expression')
+  print((practice_prob), '= ?')
+  you_try = int(input("your answer:"))
+  if you_try == equations.get('answer'):
+    print("correct!")
+  else:
+    print("incorrect")
+    print(equations.get('expression'), '=',equations.get('answer'))
+  #equation = equations[equation_index]
+  #for i in equation:
+  #  print(i, ':', equation.get(i))
+main()
+
+'''
 def main():
   r = requests.get('https://ghibliapi.herokuapp.com/films')
   print(r.status_code) #check for 200 'ok'
@@ -12,7 +31,7 @@ def main():
   for films in movie:
     print(films, ':', movie.get(films))
 main()
-
+'''
 '''
 def main():
     r = requests.get('https://opentdb.com/api.php?amount=1&category=18')
