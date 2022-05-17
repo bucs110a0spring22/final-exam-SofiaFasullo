@@ -1,10 +1,19 @@
 import tutor
+import ghibli
+
 def main():
   math = tutor.Tutor()
   tutor.Tutor.get(math)
   tutor.Tutor.practice(math)
+
+  studioghibli = ghibli.Ghibli()
+  ghibli.Ghibli.get(studioghibli)
+  #ghibli.Ghibli.random(studioghibli)
+  ghibli.Ghibli.search(studioghibli)
+  
   
 main()
+
 '''
 import requests
 #import random
