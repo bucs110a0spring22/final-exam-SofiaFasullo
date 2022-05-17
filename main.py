@@ -1,4 +1,11 @@
-#practice
+import tutor
+def main():
+  math = tutor.Tutor()
+  tutor.Tutor.get(math)
+  tutor.Tutor.practice(math)
+  
+main()
+'''
 import requests
 #import random
 import webbrowser
@@ -16,6 +23,7 @@ def main():
   webbrowser.get(browser).open_new('google.com')
   
 #main()
+'''
 '''
 def main():
   r = requests.get('https://x-math.herokuapp.com/api/random')
