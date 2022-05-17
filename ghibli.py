@@ -9,28 +9,19 @@ class Ghibli:
     self.r = requests.get(self.api_url)
     self.movies = self.r.json()
 
-  def hm(self):
+#search for a movie based on a keyword
+  def search(self):
     self.word = input("Write a keyword to search for a movie:")
     for i in range(0,21):
       self.films = self.movies[i]
       self.description = self.films.get('description')
-      print(type(self.description))
-
-  def search(self):
-    self.word = char(input("Write a keyword to search for a movie:"))
-    for i in range(0,21):
-      self.films = self.movies[i]
-      self.description = self.films.get('description')
       self.title = self.films.get('title')
-      if self.word in self.description():
+      if self.word in self.description:
         print("A good choice would be ", self.title)
+      else:
+        print("I'm sorry there were no movies that matched your keyword")
 
-  def learn(self):
-    self.choice = 0
-    self.movie = self.movies[self.choice]
-    for films in self.movie:
-      print(films, ':', self.movie.get(films))
-
+#go random!
   def random(self):
     self.index = random.randrange(0,21)
     self.movie = self.movies[self.index]

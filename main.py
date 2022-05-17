@@ -2,14 +2,17 @@ import tutor
 import ghibli
 
 def main():
+  print("We are going to practice a math problem!")
   math = tutor.Tutor()
   tutor.Tutor.get(math)
   tutor.Tutor.practice(math)
 
+  print("Do you love Studio Ghibli movies? Search for a Studio Ghibli movie based on a keyword, ie 'witch'")
   studioghibli = ghibli.Ghibli()
   ghibli.Ghibli.get(studioghibli)
-  #ghibli.Ghibli.random(studioghibli)
   ghibli.Ghibli.search(studioghibli)
+  print("Or you can go random!")
+  ghibli.Ghibli.random(studioghibli)
   
   
 main()
