@@ -1,8 +1,22 @@
 #practice
 import requests
 #import random
+import webbrowser
+#from os import startfile
+chrome = "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe %s"
+webbrowser.get(chrome).open_new('google.com')
 
-
+def main():
+  r = requests.get('https://random.dog/woof.json')
+  #dog = r.json()
+  print(r.status_code)
+  dog = r.json()
+  filepath = str(dog['url'])
+  browser = "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s"
+  webbrowser.get(browser).open_new('google.com')
+  
+#main()
+'''
 def main():
   r = requests.get('https://x-math.herokuapp.com/api/random')
   print(r.status_code) #check for 200 'ok'
@@ -19,7 +33,7 @@ def main():
   #for i in equation:
   #  print(i, ':', equation.get(i))
 main()
-
+'''
 '''
 def main():
   r = requests.get('https://ghibliapi.herokuapp.com/films')
