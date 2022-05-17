@@ -13,13 +13,17 @@ class Ghibli:
   def search(self):
     self.word = input("Write a keyword to search for a movie:")
     for i in range(0,21):
+      self.countrecs = 0
       self.films = self.movies[i]
       self.description = self.films.get('description')
       self.title = self.films.get('title')
       if self.word in self.description:
         print("A good choice would be ", self.title)
-      else:
-        print("I'm sorry there were no movies that matched your keyword")
+        self.countrecs += 1
+    if self.countrecs == 0:
+      print("I'm sorry there were no movies that matched your keyword")
+      
+    
 
 #go random!
   def random(self):
